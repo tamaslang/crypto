@@ -78,7 +78,7 @@ This ensures that we all have the same formatting rules (especially the line len
 ./gradlew build
 ```
 
-## Run
+## Run sample application (example)
 
 ```bash
 ./gradlew run
