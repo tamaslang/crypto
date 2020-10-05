@@ -56,14 +56,14 @@ class LiveOrderBoardTest {
         // Given
         val repository = InMemoryOrderRepository()
         val orderSummary = listOf(OrderSummary(OrderType.SELL, "Ethereum", 350.1.toBigDecimal(), 13.6.toBigDecimal()))
-        val orderSummaryAlgebra: OrderSummaryCalculator = { _ -> orderSummary }
-        val liveOrderBoard = LiveOrderBoard(repository, orderSummaryAlgebra)
+        val summaryCalculator: OrderSummaryCalculator = { _ -> orderSummary }
+        val liveOrderBoard = LiveOrderBoard(repository, summaryCalculator)
 
         // When
         val returnedOrderSummary = liveOrderBoard.orderSummary()
 
         // Then
-        assertThat(returnedOrderSummary).isEqualTo(orderSummary)
+        assertThat(returnedOrderSummary).isSameAs(orderSummary)
     }
 
 }
