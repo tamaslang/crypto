@@ -15,9 +15,8 @@ val detektVersion = "1.14.1"
 val junitVintageVersion = "4.12"
 
 application {
-    mainClassName = "samples.HelloWorldKt"
+    mainClassName = "example.HelloLiveOrderBoardKt"
 }
-
 
 dependencyManagement {
     dependencies {

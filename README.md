@@ -1,6 +1,5 @@
-# Sample Kotlin Gradle project
+# Crypto interview Exercise
 
-Interview exercise
 You are working for Crypto Inc. and we would like you to create a program to show the top 10 BUY or SELL orders in the Crypto Inc. marketplace.
 The Crypto Inc. 'Live Order Board' should support these features:
 
@@ -30,6 +29,13 @@ The first thing to note here is that orders for the same price should be merged 
 Please provide the implementation of the live order board which will be packaged and shipped as a library to be used by the UI team. No database or UI/WEB is needed for this assignment (we're absolutely fine with in memory solution). The only important thing is that you just write it according to your normal standards.
 
 NOTE: if during your implementation you'll find that something could be designed in multiple different ways, just implement the one which seems most reasonable to you and if you could provide a short (once sentence) reasoning why you choose this way and not another one, it would be great.
+
+## Assumptions made
+- Coin name is not restricted to a list of coins and it is case sensitive
+- when sorting SELL orders are displayed first before the BUY orders
+- no input or output formatting is provided, this could be part of a CLI class which I haven't implemented due to the time constraint
+- I made the sorting logic is extendable but by default the LiveOrderBoard uses the one described in the exercise
+- I assumed the coin name is missing by accident in the received orders
 
 
 ## Prerequisites

@@ -9,7 +9,7 @@ class LiveOrderBoard(private val orderRepository: OrderRepository, private val o
         orderRepository.deleteOrder(orderId)
     }
 
-    fun orderSummary(): OrderSummary {
+    fun orderSummary(): List<OrderSummary> {
         val orders = orderRepository.listOrders()
         return orderSummaryCalculator(orders)
     }
