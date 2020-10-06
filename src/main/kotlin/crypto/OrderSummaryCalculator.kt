@@ -5,6 +5,8 @@ import java.math.BigDecimal
 typealias OrderSummaryCalculator = (List<Order>) -> List<OrderSummary>
 
 object OrderSummaryCalculatorSpecdInTheExercise {
+    private const val RETURNED_LIST_SIZE = 10
+
     private class OrderSummaryComparator {
         companion object : Comparator<OrderSummary> {
             override fun compare(o1: OrderSummary, o2: OrderSummary): Int {
@@ -29,6 +31,6 @@ object OrderSummaryCalculatorSpecdInTheExercise {
                 .mapValues { it.value.map { it.orderQuantity }.reduce { acc, price -> acc.add(price) } }
                 .map { (orderSummary, sumQuantity) -> orderSummary.copy(orderQuantity = sumQuantity) }
                 .sortedWith(OrderSummaryComparator)
-                .take(10)
+                .take(RETURNED_LIST_SIZE)
     }
 }
