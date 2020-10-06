@@ -29,5 +29,6 @@ object OrderSummaryCalculatorSpecdInTheExercise {
                 .mapValues { it.value.map { it.orderQuantity }.reduce { acc, price -> acc.add(price) } }
                 .map { (orderSummary, sumQuantity) -> orderSummary.copy(orderQuantity = sumQuantity) }
                 .sortedWith(OrderSummaryComparator)
+                .take(10)
     }
 }

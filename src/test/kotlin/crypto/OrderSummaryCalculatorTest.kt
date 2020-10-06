@@ -185,8 +185,14 @@ class OrderSummaryCalculatorTest {
 
     @Test
     fun `OrderSummaryCalculator should only return the top 10 SELL or BUY orders`() {
-        val orders = listOf(
-                Order(OrderType.BUY, "user1", "Ethereum", 350.1.toBigDecimal(), 13.6.toBigDecimal())
-        )
+        // Given
+        val orders = (1..12).map { Order(OrderType.SELL, "user1", "Ethereum", 350.1.toBigDecimal(), it.toBigDecimal()) }
+
+        // When
+        val orderSummary = OrderSummaryCalculatorSpecdInTheExercise.createOrderSummary(orders)
+
+        // Then
+        val expectedSummaries = (1..10).map { OrderSummary(OrderType.SELL, "Ethereum", 350.1.toBigDecimal(), it.toBigDecimal()) }
+        assertThat(orderSummary).hasSameElementsAs(expectedSummaries)
     }
 }

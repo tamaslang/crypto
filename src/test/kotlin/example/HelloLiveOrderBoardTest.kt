@@ -13,7 +13,7 @@ class HelloLiveOrderBoardTest() {
         val output = PrintStream(outputStream)
 
         output.use { output ->
-            LiveOrderBoardExample(output).run()
+            LiveOrderBoardExample(output)
             val consoleLines = String(outputStream.toByteArray()).split("\n")
             assertThat(consoleLines).containsExactly(
                     "Received Orders:",
@@ -28,7 +28,6 @@ class HelloLiveOrderBoardTest() {
                     "50.5 Ethereum for £14",
                     ""
             )
-
         }
     }
 }

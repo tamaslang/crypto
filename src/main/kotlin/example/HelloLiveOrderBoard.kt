@@ -8,12 +8,12 @@ import crypto.OrderType
 import java.io.PrintStream
 
 fun main() {
-    LiveOrderBoardExample(System::out.get()).run()
+    LiveOrderBoardExample(System::out.get())
 }
 
 class LiveOrderBoardExample(val console: PrintStream) {
 
-    fun run() {
+    init {
         val liveOrderBoard = LiveOrderBoard(InMemoryOrderRepository())
         val orders = listOf(
                 Order(OrderType.SELL, "user1", "Ethereum", 350.1.toBigDecimal(), 13.6.toBigDecimal()),
