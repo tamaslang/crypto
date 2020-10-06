@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test
 import java.math.BigDecimal
 
 class OrderValidationTest {
+
     private val aValidOrder = Order(OrderType.SELL, "user1", "Ethereum", 350.1.toBigDecimal(), 13.6.toBigDecimal())
 
     @Test

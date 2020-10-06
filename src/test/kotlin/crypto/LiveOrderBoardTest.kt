@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test
 import java.util.*
 
 class InMemoryOrderRepository : OrderRepository {
+
     val orderStore: MutableMap<OrderId, Order> = mutableMapOf()
 
     override fun saveOrder(order: Order): OrderId {
@@ -21,6 +22,7 @@ class InMemoryOrderRepository : OrderRepository {
 }
 
 class LiveOrderBoardTest {
+
     @Test
     fun `LiveOrder board should register an order`() {
         // Given
